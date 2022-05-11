@@ -61,9 +61,10 @@ class BookContextProvider extends React.Component {
       },
     ],
   };
+
   render() {
     return (
-      <BookContext.Provider value={this.state}>
+      <BookContext.Provider value={{ ...this.state }}>
         {this.props.children}
       </BookContext.Provider>
     );
@@ -71,18 +72,19 @@ class BookContextProvider extends React.Component {
 }
 
 // console.log(myContext);
+
 export default BookContextProvider;
 
-//1 - ) Default Value Method ---> this.context
-// --> Context nesnesini oluşturduk.
-// --> Başlangıç değeri verdik ve export ettik.
-// --> İlgili componente import ettik.
-//-->  context type yardımıyla contexti ilgili componente atadık.
-// --> this.context yardımıyla ilgili veriye ulaştık.
+// 1 - ) Default Value ---> this.context
+// - Context nesnesini olusturduk
+// - Baslangic Degeri Verdik ve export ettik
+// - İlgili componenta import ettik
+// - context type yardımıyla contexti ilgili componenta atadık
+// - this.context yardımıyla ilgili veriye ulaştık
 
-//1 - ) Provider  ---> Consumer
-// --> Class Component oluşturduk ve veriyi state içerisine koyduk.
-// --> Contexte ait Provider ile State'te bulunan veriyi aldık.
-// --> Parent-Child ilişkisi ( {this.props.children})
-//--> Veriyi göndereceğimiz Component'a Contexti import et.
-// --> Render içerisinde Consumer ile Provider'dan gelen veriyi yakala.
+// 2 - ) Provider -----> Consumer
+// - Class comp olusturduk ve veriyi state içerisine koyduk.
+// - Contexte ait Provider ile State te bulunan veriyi aldık
+// - Parent child ilskisi {this.props.children}
+// - Veriyi gondereceğimiz componenta Context import ediyoruz.
+// - Render içersinde Consumer ile Proider dan gelen veriyi yakalıyoruz.
